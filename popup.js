@@ -50,7 +50,6 @@ request.onreadystatechange = function() {
     }
     if (isYTURL(url)){
       var a = {};
-      var a = {};
       a = JSON.parse(localStorage.getItem('a'));
       if (a == null) {
         a = JSON.parse(localStorage['json']);
@@ -58,7 +57,7 @@ request.onreadystatechange = function() {
       a[auth]=secondsOK;
       localStorage['json'] = a;
       chrome.storage.sync.set({
-        a: a
+        'a': a
       }, function() {})
 
     }
