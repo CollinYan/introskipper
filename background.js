@@ -22,6 +22,9 @@ function getChannel(url) {
 
   throw new Error("Could not create HTTP request object.");
 }
+
+
+
 var request = makeHttpObject();
 request.open("GET", url, true);
 request.send(null);
@@ -31,15 +34,20 @@ request.onreadystatechange = function() {
     if (isYTURL(myurl))
     {
       // alert(getChannel(myurl));
+      // chrome.tabs.update(undefined, {url: myurl + "&t=9"});
       var a = {};
-      a = JSON.parse(localStorage.getItem('a'));
+      a= null;
       if (a===null){
-      a = JSON.parse(localStorage["https://www.youtube.com/user/papajohnno"]);
+        if (localStorage[auth]!=null){
+      a = JSON.parse(localStorage[auth]);
+    }else
+    {a=0;
     }
-      alert(a[auth]);
+  }
+
       if (a != null) {
       test = a;
-      chrome.tabs.update(undefined, {url: myurl + "&t=" + test});
+      chrome.tabs.update(undefined, {url: myurl + "&t=" + a});
     }
     }
   }

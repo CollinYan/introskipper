@@ -50,14 +50,9 @@ request.onreadystatechange = function() {
       alert("This is not a valid Youtube URL");
     }
     if (isYTURL(url)){
-      var a = {};
-      a = JSON.parse(localStorage.getItem("https://www.youtube.com/user/papajohnno"));
-      if (a == null) {
-        a = JSON.parse(localStorage["https://www.youtube.com/user/papajohnno"]);
-      }
 
-      a[auth]=secondsOK;
-      localStorage['json'] = a;
+      var a=secondsOK;
+      localStorage[auth] = a;
       chrome.storage.sync.set({
         a: a
       }, function() {})
