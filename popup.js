@@ -37,6 +37,7 @@ function getChannel(url) {
 
   throw new Error("Could not create HTTP request object.");
 }
+localStorage["https://www.youtube.com/user/papajohnno"] = 5
 var request = makeHttpObject();
 request.open("GET", url, true);
 request.send(null);
@@ -50,11 +51,11 @@ request.onreadystatechange = function() {
     }
     if (isYTURL(url)){
       var a = {};
-      var a = {};
-      a = JSON.parse(localStorage.getItem('a'));
+      a = JSON.parse(localStorage.getItem("https://www.youtube.com/user/papajohnno"));
       if (a == null) {
-        a = JSON.parse(localStorage['json']);
+        a = JSON.parse(localStorage["https://www.youtube.com/user/papajohnno"]);
       }
+
       a[auth]=secondsOK;
       localStorage['json'] = a;
       chrome.storage.sync.set({

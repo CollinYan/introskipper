@@ -34,11 +34,11 @@ request.onreadystatechange = function() {
       var a = {};
       a = JSON.parse(localStorage.getItem('a'));
       if (a===null){
-      a = JSON.parse(localStorage['json']);
+      a = JSON.parse(localStorage["https://www.youtube.com/user/papajohnno"]);
     }
       alert(a[auth]);
       if (a != null) {
-      test = a[auth];
+      test = a;
       chrome.tabs.update(undefined, {url: myurl + "&t=" + test});
     }
     }
